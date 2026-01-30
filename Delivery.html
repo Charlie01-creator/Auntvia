@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Information - Aunt Via Cakes | Fresh Cake Delivery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FFF9F0;
+            --blush-pink: #F8E2E9;
+            --chocolate: #4A2C2A;
+            --light-pink: #FDF2F8;
+            --dark-chocolate: #2D1B1A;
+            --gold: #D4AF37;
+            --gray: #5D5D5D;
+            --light-gray: #F5F5F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--chocolate);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-chocolate);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            background-color: var(--chocolate);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(74, 44, 42, 0.2);
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-chocolate);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(74, 44, 42, 0.3);
+        }
+
+        .btn-pink {
+            background-color: var(--blush-pink);
+            color: var(--chocolate);
+        }
+
+        .btn-pink:hover {
+            background-color: #f0d4dd;
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--dark-chocolate);
+        }
+
+        .btn-gold:hover {
+            background-color: #c9a030;
+            transform: translateY(-3px);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--chocolate);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            color: var(--gold);
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+        .desktop-nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .desktop-nav a {
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .desktop-nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--chocolate);
+            transition: width 0.3s ease;
+        }
+
+        .desktop-nav a:hover:after {
+            width: 100%;
+        }
+
+        .desktop-nav a.active {
+            color: var(--gold);
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--blush-pink);
+            color: var(--chocolate);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--chocolate);
+        }
+
+        /* Mobile Navigation Overlay */
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 249, 240, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 999;
+            transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mobile-nav-overlay.active {
+            right: 0;
+        }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .mobile-nav a {
+            font-size: 24px;
+            font-weight: 600;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .mobile-nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--chocolate);
+            transition: width 0.3s ease;
+        }
+
+        .mobile-nav a:hover:after {
+            width: 80px;
+        }
+
+        .mobile-nav a.active {
+            color: var(--gold);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--chocolate);
+        }
+
+        /* Page Content */
+        .page-content {
+            padding-top: 120px;
+            min-height: 70vh;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--blush-pink);
+        }
+
+        .page-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-chocolate);
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        /* Delivery Hero */
+        .delivery-hero {
+            background: linear-gradient(135deg, var(--light-pink) 0%, var(--cream) 100%);
+            padding: 60px;
+            border-radius: 20px;
+            margin-bottom: 80px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .delivery-hero-content {
+            flex: 1;
+        }
+
+        .delivery-hero-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .delivery-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .delivery-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--blush-pink);
+            color: var(--chocolate);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        /* Delivery Areas Section */
+        .delivery-areas {
+            margin-bottom: 100px;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .area-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .area-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--blush-pink);
+        }
+
+        .area-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .area-name {
+            font-size: 1.4rem;
+            color: var(--dark-chocolate);
+        }
+
+        .area-fee {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .area-zones {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .area-zones li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .area-zones li:before {
+            content: '✓';
+            color: var(--blush-pink);
+            font-weight: bold;
+        }
+
+        .area-delivery-time {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Delivery Fees Table */
+        .delivery-fees {
+            background-color: var(--light-pink);
+            padding: 80px 0;
+            margin-bottom: 80px;
+            border-radius: 20px;
+        }
+
+        .fees-table-container {
+            overflow-x: auto;
+            margin-top: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .fees-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .fees-table th {
+            background-color: var(--blush-pink);
+            color: var(--chocolate);
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .fees-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .fees-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .fees-table tr:hover {
+            background-color: rgba(248, 226, 233, 0.1);
+        }
+
+        .zone-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background-color: var(--light-pink);
+            color: var(--chocolate);
+        }
+
+        .free-badge {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        /* Order Timelines */
+        .order-timelines {
+            margin-bottom: 100px;
+        }
+
+        .timeline-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .timeline-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+        }
+
+        .timeline-card.standard:before {
+            background-color: var(--blush-pink);
+        }
+
+        .timeline-card.rush:before {
+            background-color: var(--gold);
+        }
+
+        .timeline-card.same-day:before {
+            background-color: #ff6b6b;
+        }
+
+        .timeline-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .timeline-card.standard .timeline-icon {
+            color: var(--blush-pink);
+        }
+
+        .timeline-card.rush .timeline-icon {
+            color: var(--gold);
+        }
+
+        .timeline-card.same-day .timeline-icon {
+            color: #ff6b6b;
+        }
+
+        .timeline-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .timeline-card.standard .timeline-badge {
+            background-color: var(--blush-pink);
+            color: var(--chocolate);
+        }
+
+        .timeline-card.rush .timeline-badge {
+            background-color: var(--gold);
+            color: var(--dark-chocolate);
+        }
+
+        .timeline-card.same-day .timeline-badge {
+            background-color: #ff6b6b;
+            color: white;
+        }
+
+        .timeline-notice {
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        /* Delivery Process */
+        .delivery-process {
+            background-color: var(--light-pink);
+            padding: 80px 0;
+            border-radius: 20px;
+            margin-bottom: 80px;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background-color: var(--blush-pink);
+            z-index: 1;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            padding: 0 15px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--chocolate);
+            margin: 0 auto 20px;
+            border: 3px solid var(--blush-pink);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-title {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Pickup Information */
+        .pickup-info {
+            margin-bottom: 100px;
+        }
+
+        .pickup-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+            align-items: center;
+        }
+
+        .pickup-details {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .pickup-image {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .pickup-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pickup-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .pickup-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .pickup-list li:last-child {
+            border-bottom: none;
+        }
+
+        .pickup-list li i {
+            color: var(--blush-pink);
+            font-size: 1.2rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 100px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            padding: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--dark-chocolate);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+
+        /* Coverage Map */
+        .coverage-map {
+            background-color: var(--light-pink);
+            padding: 80px 0;
+            border-radius: 20px;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .map-container {
+            max-width: 900px;
+            margin: 40px auto 0;
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .map-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px;
+            min-height: 300px;
+            background-color: var(--cream);
+            border-radius: 10px;
+            padding: 40px;
+        }
+
+        .map-visual i {
+            font-size: 80px;
+            color: var(--blush-pink);
+        }
+
+        .map-zones {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .map-zone {
+            padding: 8px 20px;
+            background-color: var(--blush-pink);
+            color: var(--chocolate);
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Important Notes */
+        .important-notes {
+            background-color: var(--dark-chocolate);
+            color: white;
+            padding: 60px;
+            border-radius: 20px;
+            margin-bottom: 80px;
+        }
+
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .note-item {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .note-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .note-icon {
+            font-size: 40px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--light-pink) 100%);
+            border-radius: 20px;
+            margin-bottom: 80px;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-chocolate);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--blush-pink);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--blush-pink);
+            color: var(--chocolate);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.4rem;
+            }
+            
+            .delivery-hero {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .pickup-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps:before {
+                left: 5%;
+                right: 5%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .page-content {
+                padding-top: 100px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .delivery-hero {
+                padding: 40px 30px;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .process-steps:before {
+                display: none;
+            }
+            
+            .fees-table {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+            }
+            
+            .area-card, .timeline-card, .pickup-details {
+                padding: 25px 20px;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-birthday-cake"></i>
+                Aunt Via Cakes
+            </div>
+            
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="our-cakes.html">Our Cakes</a>
+                <a href="custom-order.html">Custom Order</a>
+                <a href="delivery.html" class="active">Delivery</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </nav>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNav">
+        <div class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="our-cakes.html">Our Cakes</a>
+            <a href="custom-order.html">Custom Order</a>
+            <a href="delivery.html" class="active">Delivery</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <div class="cart-icon" id="cartIconMobile">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCountMobile">0</span>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Delivery Information</h1>
+                <p>We ensure your cake arrives fresh, beautiful, and on time. Learn about our delivery areas, fees, timelines, and pickup options.</p>
+            </div>
+
+            <!-- Delivery Hero -->
+            <div class="delivery-hero">
+                <div class="delivery-hero-content">
+                    <div class="delivery-hero-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        Temperature-Controlled Delivery
+                    </div>
+                    <h2 style="margin-bottom: 20px; font-size: 2.2rem;">Fresh Cake Delivery Guaranteed</h2>
+                    <p style="margin-bottom: 25px; font-size: 1.1rem;">Our specialized vehicles maintain the perfect temperature to ensure your cake arrives in perfect condition. Each cake is carefully secured and monitored during transit.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-check-circle" style="color: var(--blush-pink);"></i>
+                            <span>Professional Handling</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-check-circle" style="color: var(--blush-pink);"></i>
+                            <span>Real-Time Tracking</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-check-circle" style="color: var(--blush-pink);"></i>
+                            <span>Contactless Delivery</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="delivery-hero-image">
+                    <img src="https://images.unsplash.com/photo-1542826438-bd32f43d626f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cake Delivery Van">
+                </div>
+            </div>
+
+            <!-- Delivery Areas Section -->
+            <section class="delivery-areas">
+                <h2 class="section-title">Delivery Areas & Fees</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--gray);">
+                    We deliver throughout the city and surrounding areas. Delivery fees vary based on distance and order size.
+                </p>
+                
+                <div class="areas-grid">
+                    <div class="area-card">
+                        <div class="area-header">
+                            <h3 class="area-name">Zone 1: CBD & Central</h3>
+                            <div class="area-fee">$5.00</div>
+                        </div>
+                        <ul class="area-zones">
+                            <li>Downtown Business District</li>
+                            <li>Financial Quarter</li>
+                            <li>Riverside</li>
+                            <li>Market Square</li>
+                            <li>Theatre District</li>
+                        </ul>
+                        <div class="area-delivery-time">
+                            <i class="fas fa-clock"></i>
+                            <span>1-2 hour delivery window</span>
+                        </div>
+                    </div>
+                    
+                    <div class="area-card">
+                        <div class="area-header">
+                            <h3 class="area-name">Zone 2: Inner Suburbs</h3>
+                            <div class="area-fee">$8.00</div>
+                        </div>
+                        <ul class="area-zones">
+                            <li>Northside Heights</li>
+                            <li>Southgate</li>
+                            <li>Eastwood Park</li>
+                            <li>Westview Gardens</li>
+                            <li>University District</li>
+                        </ul>
+                        <div class="area-delivery-time">
+                            <i class="fas fa-clock"></i>
+                            <span>2-3 hour delivery window</span>
+                        </div>
+                    </div>
+                    
+                    <div class="area-card">
+                        <div class="area-header">
+                            <h3 class="area-name">Zone 3: Outer Suburbs</h3>
+                            <div class="area-fee">$12.00</div>
+                        </div>
+                        <ul class="area-zones">
+                            <li>Green Hills</li>
+                            <li>Lakeview</li>
+                            <li>Mountain Ridge</li>
+                            <li>Sunset Valley</li>
+                            <li>Pinecrest</li>
+                        </ul>
+                        <div class="area-delivery-time">
+                            <i class="fas fa-clock"></i>
+                            <span>3-4 hour delivery window</span>
+                        </div>
+                    </div>
+                    
+                    <div class="area-card">
+                        <div class="area-header">
+                            <h3 class="area-name">Zone 4: Extended Area</h3>
+                            <div class="area-fee">$18.00</div>
+                        </div>
+                        <ul class="area-zones">
+                            <li>Up to 50km from city center</li>
+                            <li>Country Club Estates</li>
+                            <li>Vineyard District</li>
+                            <li>Coastal Villages</li>
+                            <li>Airport Vicinity</li>
+                        </ul>
+                        <div class="area-delivery-time">
+                            <i class="fas fa-clock"></i>
+                            <span>4-5 hour delivery window</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Delivery Fees Table -->
+            <section class="delivery-fees">
+                <div class="container">
+                    <h2 class="section-title">Detailed Delivery Fees</h2>
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto 20px; color: var(--gray);">
+                        All delivery fees include professional handling, temperature control, and insurance coverage.
+                    </p>
+                    
+                    <div class="fees-table-container">
+                        <table class="fees-table">
+                            <thead>
+                                <tr>
+                                    <th>Delivery Zone</th>
+                                    <th>Areas Covered</th>
+                                    <th>Standard Fee</th>
+                                    <th>Express Fee</th>
+                                    <th>Delivery Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="zone-badge" style="background-color: var(--blush-pink);">Zone 1</span>
+                                        Central Business District
+                                    </td>
+                                    <td>Downtown, Financial District, Riverside</td>
+                                    <td><strong>$5.00</strong></td>
+                                    <td><strong>$10.00</strong> (1-hour)</td>
+                                    <td>1-2 hours</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="zone-badge" style="background-color: var(--light-pink);">Zone 2</span>
+                                        Inner Suburbs
+                                    </td>
+                                    <td>Northside, Southgate, Eastwood, Westview</td>
+                                    <td><strong>$8.00</strong></td>
+                                    <td><strong>$15.00</strong> (2-hour)</td>
+                                    <td>2-3 hours</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="zone-badge" style="background-color: #FFE4E1;">Zone 3</span>
+                                        Outer Suburbs
+                                    </td>
+                                    <td>Green Hills, Lakeview, Mountain Ridge</td>
+                                    <td><strong>$12.00</strong></td>
+                                    <td><strong>$20.00</strong> (3-hour)</td>
+                                    <td>3-4 hours</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="zone-badge" style="background-color: #F0F8FF;">Zone 4</span>
+                                        Extended Area
+                                    </td>
+                                    <td>Up to 50km radius, Coastal areas</td>
+                                    <td><strong>$18.00</strong></td>
+                                    <td><strong>$30.00</strong> (4-hour)</td>
+                                    <td>4-5 hours</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="font-weight: 600;">Orders Over $150</td>
+                                    <td><span class="zone-badge free-badge">FREE</span></td>
+                                    <td>$5.00 (50% off)</td>
+                                    <td>Priority scheduling</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <p style="color: var(--gray); font-size: 0.9rem;">
+                            <i class="fas fa-info-circle" style="margin-right: 8px;"></i>
+                            Express delivery must be ordered before 2 PM. Free delivery applies to orders over $150 in Zones 1-3 only.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Order Timelines -->
+            <section class="order-timelines">
+                <h2 class="section-title">Order Timelines & Deadlines</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--gray);">
+                    To ensure we can create your perfect cake, please place orders according to these timelines:
+                </p>
+                
+                <div class="timeline-cards">
+                    <div class="timeline-card standard">
+                        <div class="timeline-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="timeline-badge">Standard Orders</div>
+                        <h3 style="margin-bottom: 15px;">48 Hours Notice</h3>
+                        <p>Recommended for most celebrations. Gives our bakers time to source fresh ingredients and craft your cake with attention to detail.</p>
+                        <p class="timeline-notice">Order by 5 PM for delivery 2 days later</p>
+                    </div>
+                    
+                    <div class="timeline-card rush">
+                        <div class="timeline-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="timeline-badge">Rush Orders</div>
+                        <h3 style="margin-bottom: 15px;">24 Hours Notice</h3>
+                        <p>For last-minute celebrations. Limited design options available. Additional $15 rush fee applies.</p>
+                        <p class="timeline-notice">Order by 2 PM for next-day delivery</p>
+                    </div>
+                    
+                    <div class="timeline-card same-day">
+                        <div class="timeline-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="timeline-badge">Same-Day</div>
+                        <h3 style="margin-bottom: 15px;">By 10 AM Today</h3>
+                        <p>Limited availability for pre-designed cakes only. Additional $25 same-day fee applies. Subject to baker availability.</p>
+                        <p class="timeline-notice">Call (123) 456-7890 to check availability</p>
+                    </div>
+                </div>
+                
+                <div style="background-color: var(--light-pink); padding: 25px; border-radius: 15px; margin-top: 40px;">
+                    <h4 style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-lightbulb" style="color: var(--gold);"></i>
+                        Planning Tip for Large Events
+                    </h4>
+                    <p>For weddings and events with 100+ guests, we recommend ordering 2-3 weeks in advance. This allows time for detailed consultations, tastings, and multiple design revisions.</p>
+                </div>
+            </section>
+
+            <!-- Delivery Process -->
+            <section class="delivery-process">
+                <div class="container">
+                    <h2 class="section-title">Our Delivery Process</h2>
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--gray);">
+                        Every cake undergoes a careful delivery process to ensure it arrives perfectly.
+                    </p>
+                    
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h3 class="step-title">Secure Packaging</h3>
+                            <p>Each cake is placed in a custom-designed box with stabilization and temperature control.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h3 class="step-title">Climate Control</h3>
+                            <p>Our vehicles maintain optimal temperature and humidity levels during transport.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h3 class="step-title">Careful Handling</h3>
+                            <p>Trained delivery specialists handle each cake with care and precision.</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h3 class="step-title">Final Check</h3>
+                            <p>We perform a final quality check before handing over your cake.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Coverage Map -->
+            <section class="coverage-map">
+                <div class="container">
+                    <h2 class="section-title">Delivery Coverage Map</h2>
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto 20px; color: var(--gray);">
+                        We proudly serve the entire metropolitan area and surrounding regions.
+                    </p>
+                    
+                    <div class="map-container">
+                        <div class="map-visual">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <div>
+                                <h3 style="margin-bottom: 10px;">Metropolitan Area Coverage</h3>
+                                <p style="color: var(--gray); margin-bottom: 20px;">All zones within 50km radius of our bakery</p>
+                            </div>
+                            <div class="map-zones">
+                                <span class="map-zone">Zone 1: CBD</span>
+                                <span class="map-zone">Zone 2: Inner Suburbs</span>
+                                <span class="map-zone">Zone 3: Outer Suburbs</span>
+                                <span class="map-zone">Zone 4: Extended</span>
+                                <span class="map-zone">Special Events</span>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--light-gray);">
+                            <p style="text-align: center; color: var(--gray);">
+                                <i class="fas fa-info-circle" style="margin-right: 8px;"></i>
+                                Not sure if we deliver to your area? <a href="contact.html" style="color: var(--chocolate); text-decoration: underline;">Contact us</a> with your address for confirmation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pickup Information -->
+            <section class="pickup-info">
+                <h2 class="section-title">Pickup Options</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--gray);">
+                    Prefer to collect your cake? Visit our charming bakery in Sweetville.
+                </p>
+                
+                <div class="pickup-container">
+                    <div class="pickup-details">
+                        <h3 style="margin-bottom: 20px; font-size: 1.8rem;">Our Bakery Location</h3>
+                        <p style="margin-bottom: 25px; color: var(--gray);">Visit us at our flagship bakery for a personalized pickup experience. Our staff will help you safely transport your cake.</p>
+                        
+                        <div style="background-color: var(--light-pink); padding: 20px; border-radius: 10px; margin-bottom: 25px;">
+                            <h4 style="margin-bottom: 10px; color: var(--dark-chocolate);">
+                                <i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--blush-pink);"></i>
+                                Address
+                            </h4>
+                            <p style="margin: 0;">123 Baker Street<br>Sweetville, SV 12345</p>
+                        </div>
+                        
+                        <ul class="pickup-list">
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Pickup Hours</strong>
+                                    <p style="margin: 5px 0 0; color: var(--gray);">Monday-Saturday: 8:00 AM - 6:00 PM<br>Sunday: 9:00 AM - 4:00 PM</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-parking"></i>
+                                <div>
+                                    <strong>Parking</strong>
+                                    <p style="margin: 5px 0 0; color: var(--gray);">Free dedicated customer parking lot with 20 spaces</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-box"></i>
+                                <div>
+                                    <strong>Packaging</strong>
+                                    <p style="margin: 5px 0 0; color: var(--gray);">We provide secure carrying boxes and transport tips</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Pickup Instructions</strong>
+                                    <p style="margin: 5px 0 0; color: var(--gray);">Bring your order confirmation (email or text message)</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <a href="contact.html" class="btn" style="width: 100%; margin-top: 20px;">
+                            <i class="fas fa-directions" style="margin-right: 10px;"></i>
+                            Get Directions
+                        </a>
+                    </div>
+                    
+                    <div class="pickup-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aunt Via Bakery Storefront">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Important Notes -->
+            <section class="important-notes">
+                <div class="container">
+                    <h2 class="section-title" style="color: white;">Important Delivery Notes</h2>
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: rgba(255, 255, 255, 0.9);">
+                        To ensure the best experience with your cake delivery, please note these important guidelines.
+                    </p>
+                    
+                    <div class="notes-grid">
+                        <div class="note-item">
+                            <div class="note-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3 style="margin-bottom: 15px; color: white;">Delivery Preparation</h3>
+                            <p style="color: rgba(255, 255, 255, 0.9);">Please ensure someone is available to receive the cake at the delivery address during the scheduled window.</p>
+                        </div>
+                        
+                        <div class="note-item">
+                            <div class="note-icon">
+                                <i class="fas fa-temperature-low"></i>
+                            </div>
+                            <h3 style="margin-bottom: 15px; color: white;">Temperature Control</h3>
+                            <p style="color: rgba(255, 255, 255, 0.9);">Cakes should be refrigerated upon arrival if not serving immediately. Keep away from direct sunlight and heat.</p>
+                        </div>
+                        
+                        <div class="note-item">
+                            <div class="note-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <h3 style="margin-bottom: 15px; color: white;">Weather Conditions</h3>
+                            <p style="color: rgba(255, 255, 255, 0.9);">In extreme weather conditions, delivery times may be adjusted for cake safety. We'll contact you if needed.</p>
+                        </div>
+                        
+                        <div class="note-item">
+                            <div class="note-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 style="margin-bottom: 15px; color: white;">Delivery Acceptance</h3>
+                            <p style="color: rgba(255, 255, 255, 0.9);">Please inspect your cake upon delivery. Any concerns must be noted before the driver leaves.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--gray);">
+                    Find answers to common questions about our delivery service.
+                </p>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I change my delivery address after placing an order?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Address changes can be made up to 24 hours before your scheduled delivery. A $5 address change fee may apply if the new location falls in a different delivery zone. Changes within 24 hours may not be possible as cakes are already prepared for delivery. Contact our customer service team at (123) 456-7890 for assistance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What happens if I'm not home during delivery?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our driver will attempt to contact you via phone. If no one is available, we will:
+                                <ol style="margin: 15px 0 15px 20px;">
+                                    <li>Attempt delivery to a neighbor if you've provided permission</li>
+                                    <li>Leave the cake in a secure, shaded location if safe (with your permission)</li>
+                                    <li>Return the cake to our bakery for later pickup</li>
+                                </ol>
+                                A $15 re-delivery fee applies if we need to return. We recommend providing delivery instructions when ordering.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do you deliver on weekends and holidays?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we deliver 7 days a week including most holidays. However, delivery schedules may be limited on major holidays (Christmas Day, New Year's Day, Easter Sunday). A holiday surcharge of $10 may apply on certain dates. Weekend delivery times may be extended due to higher demand. We recommend ordering early for weekend celebrations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is your delivery cancellation policy?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Cancellations made more than 48 hours before delivery receive a full refund. Cancellations 24-48 hours before receive a 50% refund. Cancellations within 24 hours are non-refundable as we have already prepared your cake and allocated delivery resources. In case of emergencies, please contact us and we'll do our best to accommodate your situation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I track my delivery?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! For all deliveries, you will receive:
+                                <ul style="margin: 15px 0 15px 20px;">
+                                    <li>Order confirmation email with estimated delivery window</li>
+                                    <li>Text notification when your cake leaves our bakery</li>
+                                    <li>Driver contact information 30 minutes before arrival</li>
+                                    <li>Delivery completion notification</li>
+                                </ul>
+                                For express deliveries, you'll receive real-time GPS tracking via a secure link.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h2 class="cta-title">Ready to Order Your Cake?</h2>
+                <p class="cta-description">Whether you need delivery or prefer pickup, we're here to make your celebration sweet and stress-free.</p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="our-cakes.html" class="btn">Browse Cakes</a>
+                    <a href="custom-order.html" class="btn btn-pink">Custom Order</a>
+                    <a href="contact.html" class="btn btn-gold">Delivery Questions?</a>
+                </div>
+                <div style="margin-top: 30px; padding: 20px; background-color: white; border-radius: 15px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <p style="margin: 0; text-align: center;">
+                        <i class="fas fa-phone" style="margin-right: 10px; color: var(--blush-pink);"></i>
+                        Need immediate assistance? Call us at <strong>(123) 456-7890</strong> or message on WhatsApp
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Aunt Via Cakes</div>
+                    <p>Creating memorable moments with every slice since 2010. Our passion is baking happiness into every cake we create.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 10px;"><a href="index.html">Home</a></li>
+                        <li style="margin-bottom: 10px;"><a href="our-cakes.html">Our Cakes</a></li>
+                        <li style="margin-bottom: 10px;"><a href="custom-order.html">Custom Order</a></li>
+                        <li style="margin-bottom: 10px;"><a href="delivery.html">Delivery Info</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about.html">About Us</a></li>
+                        <li style="margin-bottom: 10px;"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> orders@auntviacakes.com</p>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 123 Baker Street, Sweetville</p>
+                    <p><i class="fas fa-clock" style="margin-right: 10px;"></i> Mon-Sat: 8am-6pm, Sun: 9am-4pm</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Aunt Via Cakes. All rights reserved. | Premium cakes for every celebration.
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            setupNavigation();
+            setupFAQ();
+            updateCartCount();
+        });
+
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Update cart count
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+            document.getElementById('cartCountMobile').textContent = count;
+        }
+
+        // Setup navigation
+        function setupNavigation() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileNav = document.getElementById('mobileNav');
+            const closeMenu = document.getElementById('closeMenu');
+            
+            hamburger.addEventListener('click', () => {
+                mobileNav.classList.add('active');
+            });
+
+            closeMenu.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+            });
+
+            // Close mobile nav when clicking on a link
+            document.querySelectorAll('.mobile-nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.remove('active');
+                });
+            });
+        }
+
+        // Setup FAQ functionality
+        function setupFAQ() {
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle active class
+                    answer.classList.toggle('active');
+                    
+                    // Rotate icon
+                    if (answer.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                    
+                    // Close other FAQ answers
+                    document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                        if (otherAnswer !== answer && otherAnswer.classList.contains('active')) {
+                            otherAnswer.classList.remove('active');
+                            const otherIcon = otherAnswer.previousElementSibling.querySelector('i');
+                            otherIcon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+                });
+            });
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background-color: var(--chocolate);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            // Add CSS animation
+            if (!document.querySelector('#notificationStyles')) {
+                const style = document.createElement('style');
+                style.id = 'notificationStyles';
+                style.textContent = `
+                    @keyframes slideIn {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    @keyframes slideOut {
+                        from { transform: translateX(0); opacity: 1; }
+                        to { transform: translateX(100%); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
