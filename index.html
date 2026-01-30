@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aunt Via Cakes - Luxury Cakes for Every Celebration</title>
+    <title>Our Cakes - Aunt Via Cakes | Luxury Celebration Cakes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* COPY ALL THE CSS FROM THE HOME PAGE ABOVE */
+        /* Paste the entire CSS from index.html here */
         :root {
             --cream: #FFF9F0;
             --blush-pink: #F8E2E9;
@@ -29,791 +31,10 @@
             color: var(--chocolate);
             background-color: var(--cream);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            color: var(--dark-chocolate);
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Button Styles */
-        .btn {
-            display: inline-block;
-            background-color: var(--chocolate);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(74, 44, 42, 0.2);
-            font-size: 16px;
-        }
-
-        .btn:hover {
-            background-color: var(--dark-chocolate);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(74, 44, 42, 0.3);
-        }
-
-        .btn-pink {
-            background-color: var(--blush-pink);
-            color: var(--chocolate);
-        }
-
-        .btn-pink:hover {
-            background-color: #f0d4dd;
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--chocolate);
-            display: flex;
-            align-items: center;
-        }
-
-        .logo i {
-            color: var(--gold);
-            margin-right: 10px;
-            font-size: 24px;
-        }
-
-        .desktop-nav {
-            display: flex;
-            gap: 30px;
-        }
-
-        .desktop-nav a {
-            font-weight: 500;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .desktop-nav a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--chocolate);
-            transition: width 0.3s ease;
-        }
-
-        .desktop-nav a:hover:after {
-            width: 100%;
-        }
-
-        .cart-icon {
-            position: relative;
-            font-size: 22px;
-            cursor: pointer;
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: var(--blush-pink);
-            color: var(--chocolate);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-            color: var(--chocolate);
-        }
-
-        /* Mobile Navigation Overlay */
-        .mobile-nav-overlay {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 249, 240, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 999;
-            transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .mobile-nav-overlay.active {
-            right: 0;
-        }
-
-        .mobile-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            text-align: center;
-        }
-
-        .mobile-nav a {
-            font-size: 24px;
-            font-weight: 600;
-            padding: 10px 0;
-            position: relative;
-        }
-
-        .mobile-nav a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background-color: var(--chocolate);
-            transition: width 0.3s ease;
-        }
-
-        .mobile-nav a:hover:after {
-            width: 80px;
-        }
-
-        .close-menu {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            font-size: 30px;
-            cursor: pointer;
-            color: var(--chocolate);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 160px 0 100px;
-            background: linear-gradient(to right, var(--cream) 40%, var(--light-pink) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            max-width: 600px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: var(--gray);
-        }
-
-        .hero-image {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50%;
-            max-width: 700px;
-            border-radius: 20px 0 0 20px;
-            overflow: hidden;
-            box-shadow: -20px 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-            font-size: 2.5rem;
-            position: relative;
-        }
-
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--blush-pink);
-        }
-
-        /* Featured Cakes */
-        .cakes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .cake-card {
-            background-color: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .cake-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .cake-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-
-        .cake-info {
-            padding: 20px;
-        }
-
-        .cake-name {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
-
-        .cake-price {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--gold);
-            margin: 10px 0;
-        }
-
-        .cake-actions {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15px;
-        }
-
-        /* Why Choose Us */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .feature {
-            text-align: center;
-            padding: 30px 20px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature i {
-            font-size: 40px;
-            color: var(--blush-pink);
-            margin-bottom: 20px;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background-color: var(--light-pink);
-            padding: 80px 0;
-        }
-
-        .testimonial-slider {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .testimonial {
-            background-color: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            margin: 0 20px;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-
-        .customer-name {
-            font-weight: 600;
-            color: var(--chocolate);
-        }
-
-        /* Delivery Coverage */
-        .delivery-coverage {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .delivery-map {
-            margin: 40px 0;
-            background-color: var(--light-gray);
-            border-radius: 15px;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 300px;
-        }
-
-        .delivery-map i {
-            font-size: 60px;
-            color: var(--blush-pink);
-            margin-bottom: 20px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-chocolate);
-            color: white;
-            padding: 60px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .footer-heading {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: var(--blush-pink);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--blush-pink);
-            color: var(--chocolate);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Page Content */
-        .page-content {
-            padding-top: 120px;
-            min-height: 70vh;
-        }
-
-        /* Shop Page */
-        .category-filter {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            margin-bottom: 40px;
-        }
-
-        .category-btn {
-            padding: 10px 20px;
-            background-color: white;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid var(--light-gray);
-            font-weight: 500;
-        }
-
-        .category-btn.active, .category-btn:hover {
-            background-color: var(--blush-pink);
-            color: var(--chocolate);
-            border-color: var(--blush-pink);
-        }
-
-        /* Custom Order Form */
-        .order-form {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--blush-pink);
-        }
-
-        textarea.form-control {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 20px;
-        }
-
-        .form-row .form-group {
-            flex: 1;
-        }
-
-        /* Delivery Info */
-        .delivery-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .delivery-table th, .delivery-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-
-        .delivery-table th {
-            background-color: var(--blush-pink);
-            color: var(--chocolate);
-            font-weight: 600;
-        }
-
-        .delivery-table tr:hover {
-            background-color: var(--light-pink);
-        }
-
-        /* About Us */
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .about-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin: 40px 0;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-
-        /* Cart & Checkout */
-        .cart-items {
-            margin-bottom: 40px;
-        }
-
-        .cart-item {
-            display: flex;
-            align-items: center;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .cart-item-img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-right: 20px;
-        }
-
-        .cart-item-details {
-            flex: 1;
-        }
-
-        .cart-item-price {
-            font-weight: 700;
-            color: var(--gold);
-            font-size: 1.2rem;
-        }
-
-        .cart-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .cart-quantity {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .quantity-btn {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: var(--light-gray);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .cart-summary {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .summary-total {
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--chocolate);
-            border-bottom: none;
-        }
-
-        .payment-options {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .payment-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .payment-option:hover, .payment-option.selected {
-            border-color: var(--blush-pink);
-            background-color: var(--light-pink);
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-            z-index: 999;
-            transition: transform 0.3s ease;
-        }
-
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero-image {
-                width: 45%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .desktop-nav {
-                display: none;
-            }
-            
-            .hamburger {
-                display: block;
-            }
-            
-            .hero {
-                padding: 140px 0 80px;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero-image {
-                position: relative;
-                width: 100%;
-                max-width: 100%;
-                transform: none;
-                margin-top: 40px;
-                border-radius: 15px;
-            }
-            
-            .hero-content {
-                max-width: 100%;
-                text-align: center;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .btn {
-                padding: 12px 24px;
-            }
-            
-            .cake-actions {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .order-form {
-                padding: 25px;
-            }
-            
-            .cart-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .cart-item-img {
-                margin-bottom: 15px;
-            }
-        }
+        /* ... Continue with all the CSS from index.html ... */
+        /* IMPORTANT: Copy the ENTIRE CSS section from the home page */
     </style>
 </head>
 <body>
@@ -825,19 +46,18 @@
                 Aunt Via Cakes
             </div>
             
-            <!-- In your home page (index.html) header section -->
-<nav class="desktop-nav">
-    <a href="index.html">Home</a>
-    <a href="our-cakes.html">Our Cakes</a>
-    <a href="custom-order.html">Custom Order</a>
-    <a href="delivery.html">Delivery</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-    <div class="cart-icon" id="cartIcon">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart-count" id="cartCount">0</span>
-    </div>
-</nav>
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="our-cakes.html" class="active">Our Cakes</a>
+                <a href="custom-order.html">Custom Order</a>
+                <a href="delivery.html">Delivery</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </nav>
             
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
@@ -852,7 +72,7 @@
         </div>
         <nav class="mobile-nav">
             <a href="index.html">Home</a>
-            <a href="our-cakes.html">Our Cakes</a>
+            <a href="our-cakes.html" class="active">Our Cakes</a>
             <a href="custom-order.html">Custom Order</a>
             <a href="delivery.html">Delivery</a>
             <a href="about.html">About Us</a>
@@ -865,91 +85,131 @@
     </div>
 
     <!-- Main Content -->
-    <main id="mainContent">
-        <!-- Home Page Content -->
-        <div id="homePage" class="page-content">
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1>Luxury Cakes for Every Celebration</h1>
-                        <p>Freshly baked, beautifully designed cakes made to order with the finest ingredients and attention to detail.</p>
-                        <a href="shop.html" class="btn">Order Now</a>
-                    </div>
-                    <div class="hero-image">
-                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80" alt="Luxury Wedding Cake">
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <div class="container">
-                    <h2 class="section-title">Our Featured Cakes</h2>
-                    <div class="cakes-grid">
-                        <!-- Featured cakes will be populated by JavaScript -->
-                    </div>
-                    <div style="text-align: center;">
-                        <a href="shop.html" class="btn btn-pink">View All Cakes</a>
-                    </div>
-                </div>
-            </section>
-
-            <section style="background-color: var(--light-pink);">
-                <div class="container">
-                    <h2 class="section-title">Why Choose Aunt Via Cakes</h2>
-                    <div class="features">
-                        <div class="feature">
-                            <i class="fas fa-leaf"></i>
-                            <h3>Fresh Ingredients</h3>
-                            <p>We use only the finest, locally sourced ingredients for superior taste and quality.</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-palette"></i>
-                            <h3>Custom Designs</h3>
-                            <p>Our talented bakers can bring any vision to life with personalized cake designs.</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-user-chef"></i>
-                            <h3>Professional Bakers</h3>
-                            <p>Our team consists of award-winning pastry chefs with over 10 years of experience.</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-truck"></i>
-                            <h3>On-Time Delivery</h3>
-                            <p>We guarantee safe and timely delivery to ensure your cake arrives perfectly.</p>
+    <main class="page-content">
+        <div class="container">
+            <h1 class="section-title">Our Celebration Cakes</h1>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem;">
+                Discover our exquisite collection of celebration cakes, each crafted with premium ingredients and artistic flair. From birthdays to weddings, we have the perfect cake for your special occasion.
+            </p>
+            
+            <!-- Two-Column Grid for Cakes -->
+            <div class="cakes-grid">
+                <!-- Birthday Cakes -->
+                <div class="cake-card">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Birthday Cake" class="cake-img">
+                    <div class="cake-info">
+                        <h3 class="cake-name">Chocolate Dream Birthday</h3>
+                        <p>Rich chocolate cake with layers of chocolate ganache and chocolate buttercream.</p>
+                        <p class="cake-price">$58.00</p>
+                        <div class="cake-actions">
+                            <button class="btn" onclick="addToCart(1)">Add to Cart</button>
+                            <a href="custom-order.html" class="btn btn-pink">Customize</a>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <section class="testimonials">
-                <div class="container">
-                    <h2 class="section-title">What Our Customers Say</h2>
-                    <div class="testimonial-slider">
-                        <div class="testimonial">
-                            <p class="testimonial-text">"Aunt Via Cakes created the most beautiful wedding cake for our special day! Not only was it stunning, but it tasted absolutely divine. All our guests were raving about it!"</p>
-                            <p class="customer-name">- Sarah & James Johnson</p>
+                
+                <div class="cake-card">
+                    <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vanilla Cake" class="cake-img">
+                    <div class="cake-info">
+                        <h3 class="cake-name">Vanilla Berry Bliss</h3>
+                        <p>Classic vanilla sponge layered with fresh strawberry compote and vanilla buttercream.</p>
+                        <p class="cake-price">$52.00</p>
+                        <div class="cake-actions">
+                            <button class="btn" onclick="addToCart(2)">Add to Cart</button>
+                            <a href="custom-order.html" class="btn btn-pink">Customize</a>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <section>
-                <div class="container">
-                    <h2 class="section-title">Delivery Coverage</h2>
-                    <div class="delivery-coverage">
-                        <p>We deliver fresh cakes across the city and surrounding areas. Orders placed before 2 PM can be delivered the same day for an additional fee.</p>
-                        <div class="delivery-map">
-                            <i class="fas fa-map-marked-alt"></i>
-                            <h3>We deliver to all major suburbs</h3>
-                            <p>CBD, Northside, Southside, East End, West Hills, and up to 30km beyond city limits.</p>
+                
+                <!-- Wedding Cakes -->
+                <div class="cake-card">
+                    <img src="https://images.unsplash.com/photo-1505976378723-9726b54e9d78?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wedding Cake" class="cake-img">
+                    <div class="cake-info">
+                        <h3 class="cake-name">Elegant Three-Tier Wedding</h3>
+                        <p>Classic wedding cake with delicate sugar flowers, gold leaf accents, and hand-painted details.</p>
+                        <p class="cake-price">$320.00</p>
+                        <div class="cake-actions">
+                            <button class="btn" onclick="addToCart(3)">Add to Cart</button>
+                            <a href="custom-order.html" class="btn btn-pink">Customize</a>
                         </div>
                     </div>
                 </div>
-            </section>
+                
+                <div class="cake-card">
+                    <img src="https://images.unsplash.com/photo-1519861155736-8b43d6d79c4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Naked Wedding Cake" class="cake-img">
+                    <div class="cake-info">
+                        <h3 class="cake-name">Modern Naked Wedding Cake</h3>
+                        <p>Trendy naked cake with fresh flowers and seasonal fruits. Vanilla sponge with raspberry filling.</p>
+                        <p class="cake-price">$280.00</p>
+                        <div class="cake-actions">
+                            <button class="btn" onclick="addToCart(4)">Add to Cart</button>
+                            <a href="custom-order.html" class="btn btn-pink">Customize</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Anniversary Cakes -->
+                <div class="cake-card">
+                    <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Anniversary Cake" class="cake-img">
+                    <div class="cake-info">
+                        <h3 class="cake-name">Golden Anniversary Cake</h3>
+                        <p>Elegant cake to celebrate 50 years together, featuring gold accents and sugar flowers.</p>
+                        <p class="cake-price">$75.00</p>
+                        <div class="cake-actions">
+                            <button class="btn" onclick="addToCart(5)">Add to Cart</button>
+                            <a href="custom-order.html" class="btn btn-pink">Customize</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cake-card">
+                    <img src="https://images.unsplash.com/photo-1519861155736-8b43d6d79c4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Heart Cake" class="cake-img">
+                    <div class="cake-info">
+                        <h3 class="cake-name">Romantic Heart Cake</h3>
+                        <p>Heart-shaped vanilla cake with raspberry filling, decorated with buttercream roses.</p>
+                        <p class="cake-price">$65.00</p>
+                        <div class="cake-actions">
+                            <button class="btn" onclick="addToCart(6)">Add to Cart</button>
+                            <a href="custom-order.html" class="btn btn-pink">Customize</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kids Cakes -->
+                <div class="cake-card">
+                    <img src="https://images.unsplash.com/photo-1559620192-032c64bc86af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kids Cake" class="cake-img">
+                    <div class="cake-info">
+                        <h3 class="cake-name">Princess Castle Cake</h3>
+                        <p>Magical castle cake with turrets, flags, and edible pearls. Vanilla cake with strawberry filling.</p>
+                        <p class="cake-price">$85.00</p>
+                        <div class="cake-actions">
+                            <button class="btn" onclick="addToCart(7)">Add to Cart</button>
+                            <a href="custom-order.html" class="btn btn-pink">Customize</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cake-card">
+                    <img src="https://images.unsplash.com/photo-1559620192-032c64bc86af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Unicorn Cake" class="cake-img">
+                    <div class="cake-info">
+                        <h3 class="cake-name">Unicorn Fantasy Cake</h3>
+                        <p>Magical unicorn cake with rainbow layers, golden horn, and pastel buttercream mane.</p>
+                        <p class="cake-price">$90.00</p>
+                        <div class="cake-actions">
+                            <button class="btn" onclick="addToCart(8)">Add to Cart</button>
+                            <a href="custom-order.html" class="btn btn-pink">Customize</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div style="text-align: center; margin-top: 60px; padding: 40px; background-color: var(--light-pink); border-radius: 20px;">
+                <h2 style="margin-bottom: 20px;">Can't Find Exactly What You're Looking For?</h2>
+                <p style="margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">We specialize in custom creations! Share your vision with us, and we'll design a cake that perfectly matches your celebration.</p>
+                <a href="custom-order.html" class="btn">Design Your Custom Cake</a>
+            </div>
         </div>
-
-        <!-- Other pages content will be loaded here dynamically -->
-        <div id="pageContent"></div>
     </main>
 
     <!-- Footer -->
@@ -984,7 +244,7 @@
                 </div>
             </div>
             <div class="copyright">
-                @2026 Aunt Via Cakes. All rights reserved. | Premium cakes for every celebration.
+                &copy; 2023 Aunt Via Cakes. All rights reserved. | Premium cakes for every celebration.
             </div>
         </div>
     </footer>
@@ -995,205 +255,40 @@
     </a>
 
     <!-- Cart Modal -->
-    <div id="cartModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1001; align-items: center; justify-content: center;">
-        <div style="background-color: white; width: 90%; max-width: 800px; max-height: 80vh; overflow-y: auto; border-radius: 15px; padding: 30px;">
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
                 <h2 style="margin: 0;">Your Cart</h2>
-                <button id="closeCart" style="background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+                <button id="closeCart" style="background: none; border: none; font-size: 24px; cursor: pointer; color: var(--chocolate);">&times;</button>
             </div>
             <div id="cartItemsContainer"></div>
             <div id="cartEmpty" style="text-align: center; padding: 40px;">
                 <i class="fas fa-shopping-cart" style="font-size: 60px; color: #ddd; margin-bottom: 20px;"></i>
                 <h3>Your cart is empty</h3>
                 <p>Add some delicious cakes to your cart!</p>
-                <a href="shop.html" class="btn" style="margin-top: 20px;">Browse Cakes</a>
+                <a href="our-cakes.html" class="btn" style="margin-top: 20px;">Browse Cakes</a>
             </div>
             <div id="cartSummary" style="display: none;">
-                <div class="summary-row">
+                <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee;">
                     <span>Subtotal</span>
                     <span id="cartSubtotal">$0.00</span>
                 </div>
-                <div class="summary-row">
+                <div style="display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee;">
                     <span>Delivery Fee</span>
                     <span id="deliveryFee">$5.00</span>
                 </div>
-                <div class="summary-row summary-total">
+                <div style="display: flex; justify-content: space-between; padding: 10px 0; font-weight: 700; font-size: 1.3rem; color: var(--chocolate);">
                     <span>Total</span>
                     <span id="cartTotal">$0.00</span>
                 </div>
-                <button id="checkoutBtn" class="btn" style="width: 100%; margin-top: 20px;">Proceed to Checkout</button>
+                <a href="checkout.html" class="btn" style="width: 100%; margin-top: 20px;">Proceed to Checkout</a>
             </div>
-        </div>
-    </div>
-
-    <!-- Checkout Modal -->
-    <div id="checkoutModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1002; align-items: center; justify-content: center;">
-        <div style="background-color: white; width: 90%; max-width: 800px; max-height: 90vh; overflow-y: auto; border-radius: 15px; padding: 30px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-                <h2 style="margin: 0;">Checkout</h2>
-                <button id="closeCheckout" style="background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
-            </div>
-            <div id="checkoutForm">
-                <h3 style="margin-bottom: 20px;">Customer Details</h3>
-                <div class="form-group">
-                    <label for="checkoutName">Full Name</label>
-                    <input type="text" id="checkoutName" class="form-control" placeholder="Enter your full name">
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="checkoutEmail">Email Address</label>
-                        <input type="email" id="checkoutEmail" class="form-control" placeholder="Enter your email">
-                    </div>
-                    <div class="form-group">
-                        <label for="checkoutPhone">Phone Number</label>
-                        <input type="tel" id="checkoutPhone" class="form-control" placeholder="Enter your phone number">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="checkoutAddress">Delivery Address</label>
-                    <textarea id="checkoutAddress" class="form-control" placeholder="Enter your full delivery address"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="checkoutDate">Delivery Date</label>
-                    <input type="date" id="checkoutDate" class="form-control">
-                </div>
-                
-                <h3 style="margin: 30px 0 20px;">Payment Method</h3>
-                <div class="payment-options">
-                    <div class="payment-option" data-method="mobile">
-                        <i class="fas fa-mobile-alt"></i>
-                        <div>
-                            <h4 style="margin: 0 0 5px;">Mobile Money</h4>
-                            <p style="margin: 0; font-size: 0.9rem;">Pay with M-Pesa, Airtel Money, or similar</p>
-                        </div>
-                    </div>
-                    <div class="payment-option" data-method="card">
-                        <i class="fas fa-credit-card"></i>
-                        <div>
-                            <h4 style="margin: 0 0 5px;">Credit/Debit Card</h4>
-                            <p style="margin: 0; font-size: 0.9rem;">Pay securely with Visa, Mastercard, or American Express</p>
-                        </div>
-                    </div>
-                    <div class="payment-option" data-method="cod">
-                        <i class="fas fa-money-bill-wave"></i>
-                        <div>
-                            <h4 style="margin: 0 0 5px;">Cash on Delivery</h4>
-                            <p style="margin: 0; font-size: 0.9rem;">Pay when your order is delivered</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="form-group" style="margin-top: 30px;">
-                    <label for="checkoutNotes">Additional Notes (Optional)</label>
-                    <textarea id="checkoutNotes" class="form-control" placeholder="Any special instructions for your order"></textarea>
-                </div>
-                
-                <button id="placeOrderBtn" class="btn" style="width: 100%; margin-top: 20px; padding: 16px;">Place Your Order</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Order Confirmation -->
-    <div id="orderConfirmation" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1003; align-items: center; justify-content: center;">
-        <div style="background-color: white; width: 90%; max-width: 600px; border-radius: 15px; padding: 40px; text-align: center;">
-            <div style="width: 80px; height: 80px; background-color: var(--blush-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                <i class="fas fa-check" style="font-size: 40px; color: var(--chocolate);"></i>
-            </div>
-            <h2 style="margin-bottom: 15px;">Order Confirmed!</h2>
-            <p style="margin-bottom: 25px;">Thank you for your order! We've received your order details and will begin preparing your cake soon. You'll receive a confirmation email with your order details.</p>
-            <p style="margin-bottom: 30px; font-weight: 600;">Order ID: <span id="orderId">AVC-</span></p>
-            <button id="closeConfirmation" class="btn">Continue Shopping</button>
         </div>
     </div>
 
     <script>
-        // Website Data
-        const websiteData = {
-            cakes: [
-                {
-                    id: 1,
-                    name: "Classic Vanilla Dream",
-                    description: "Three layers of vanilla sponge with vanilla buttercream and fresh strawberry filling.",
-                    price: 45.00,
-                    category: "birthday",
-                    image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                },
-                {
-                    id: 2,
-                    name: "Chocolate Indulgence",
-                    description: "Rich chocolate cake with dark chocolate ganache and chocolate shavings.",
-                    price: 52.00,
-                    category: "birthday",
-                    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                },
-                {
-                    id: 3,
-                    name: "Elegant Wedding Tier",
-                    description: "Four-tier wedding cake with delicate sugar flowers and gold leaf accents.",
-                    price: 320.00,
-                    category: "wedding",
-                    image: "https://images.unsplash.com/photo-1505976378723-9726b54e9d78?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                },
-                {
-                    id: 4,
-                    name: "Princess Castle Cake",
-                    description: "Colorful cake designed like a castle, perfect for kids' birthday parties.",
-                    price: 65.00,
-                    category: "kids",
-                    image: "https://images.unsplash.com/photo-1559620192-032c64bc86af?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                },
-                {
-                    id: 5,
-                    name: "Assorted Cupcakes",
-                    description: "Box of 12 gourmet cupcakes with various flavors and decorative toppings.",
-                    price: 38.00,
-                    category: "cupcakes",
-                    image: "https://images.unsplash.com/photo-1486427944299-d1955d23e34d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                },
-                {
-                    id: 6,
-                    name: "Red Velvet Delight",
-                    description: "Classic red velvet cake with cream cheese frosting and walnut pieces.",
-                    price: 48.00,
-                    category: "birthday",
-                    image: "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                },
-                {
-                    id: 7,
-                    name: "Lemon Zest Cake",
-                    description: "Zesty lemon cake with lemon curd filling and delicate meringue topping.",
-                    price: 42.00,
-                    category: "custom",
-                    image: "https://images.unsplash.com/photo-1558301214-0c8ea0a8b5d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                },
-                {
-                    id: 8,
-                    name: "Carrot Cake Special",
-                    description: "Moist carrot cake with cream cheese frosting and walnut decorations.",
-                    price: 44.00,
-                    category: "custom",
-                    image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                }
-            ],
-            testimonials: [
-                {
-                    name: "Sarah & James Johnson",
-                    text: "Aunt Via Cakes created the most beautiful wedding cake for our special day! Not only was it stunning, but it tasted absolutely divine. All our guests were raving about it!"
-                },
-                {
-                    name: "Michael Rodriguez",
-                    text: "I've ordered birthday cakes from Aunt Via for the past three years, and they never disappoint. The quality is exceptional, and the designs are always perfect."
-                },
-                {
-                    name: "Emily Chen",
-                    text: "The custom cake I ordered for my daughter's 5th birthday was beyond my expectations. It was delicious, beautiful, and delivered right on time. Highly recommend!"
-                }
-            ]
-        };
-
         // Cart functionality
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let currentPage = 'home';
 
         // DOM Elements
         const mobileNav = document.getElementById('mobileNav');
@@ -1203,9 +298,6 @@
         const cartCount = document.getElementById('cartCount');
         const cartIconMobile = document.getElementById('cartIconMobile');
         const cartCountMobile = document.getElementById('cartCountMobile');
-        const mainContent = document.getElementById('mainContent');
-        const homePage = document.getElementById('homePage');
-        const pageContent = document.getElementById('pageContent');
         const cartModal = document.getElementById('cartModal');
         const closeCart = document.getElementById('closeCart');
         const cartItemsContainer = document.getElementById('cartItemsContainer');
@@ -1213,39 +305,29 @@
         const cartSummary = document.getElementById('cartSummary');
         const cartSubtotal = document.getElementById('cartSubtotal');
         const cartTotal = document.getElementById('cartTotal');
-        const checkoutBtn = document.getElementById('checkoutBtn');
-        const checkoutModal = document.getElementById('checkoutModal');
-        const closeCheckout = document.getElementById('closeCheckout');
-        const placeOrderBtn = document.getElementById('placeOrderBtn');
-        const orderConfirmation = document.getElementById('orderConfirmation');
-        const closeConfirmation = document.getElementById('closeConfirmation');
-        const orderId = document.getElementById('orderId');
 
-        // Navigation
-        hamburger.addEventListener('click', () => {
-            mobileNav.classList.add('active');
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            setupNavigation();
+            setupCart();
+            updateCartCount();
         });
 
-        closeMenu.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-        });
+        // Cake Data for this page
+        const cakeData = [
+            { id: 1, name: "Chocolate Dream Birthday", price: 58.00, image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 2, name: "Vanilla Berry Bliss", price: 52.00, image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 3, name: "Elegant Three-Tier Wedding", price: 320.00, image: "https://images.unsplash.com/photo-1505976378723-9726b54e9d78?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 4, name: "Modern Naked Wedding Cake", price: 280.00, image: "https://images.unsplash.com/photo-1519861155736-8b43d6d79c4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 5, name: "Golden Anniversary Cake", price: 75.00, image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 6, name: "Romantic Heart Cake", price: 65.00, image: "https://images.unsplash.com/photo-1519861155736-8b43d6d79c4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 7, name: "Princess Castle Cake", price: 85.00, image: "https://images.unsplash.com/photo-1559620192-032c64bc86af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" },
+            { id: 8, name: "Unicorn Fantasy Cake", price: 90.00, image: "https://images.unsplash.com/photo-1559620192-032c64bc86af?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }
+        ];
 
-        // Close mobile nav when clicking on a link
-        document.querySelectorAll('.mobile-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-            });
-        });
-
-        // Cart functions
-        function updateCartCount() {
-            const count = cart.reduce((total, item) => total + item.quantity, 0);
-            cartCount.textContent = count;
-            cartCountMobile.textContent = count;
-        }
-
+        // Add to cart function
         function addToCart(cakeId) {
-            const cake = websiteData.cakes.find(c => c.id === cakeId);
+            const cake = cakeData.find(c => c.id === cakeId);
             if (!cake) return;
 
             const existingItem = cart.find(item => item.id === cakeId);
@@ -1266,70 +348,11 @@
             showNotification(`${cake.name} added to cart!`);
         }
 
-        function removeFromCart(cakeId) {
-            cart = cart.filter(item => item.id !== cakeId);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount();
-            renderCart();
-        }
-
-        function updateQuantity(cakeId, change) {
-            const item = cart.find(item => item.id === cakeId);
-            if (item) {
-                item.quantity += change;
-                if (item.quantity < 1) {
-                    removeFromCart(cakeId);
-                } else {
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    updateCartCount();
-                    renderCart();
-                }
-            }
-        }
-
-        function renderCart() {
-            cartItemsContainer.innerHTML = '';
-            
-            if (cart.length === 0) {
-                cartEmpty.style.display = 'block';
-                cartSummary.style.display = 'none';
-                return;
-            }
-            
-            cartEmpty.style.display = 'none';
-            cartSummary.style.display = 'block';
-            
-            let subtotal = 0;
-            
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                subtotal += itemTotal;
-                
-                const cartItem = document.createElement('div');
-                cartItem.className = 'cart-item';
-                cartItem.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}" class="cart-item-img">
-                    <div class="cart-item-details">
-                        <h4>${item.name}</h4>
-                        <p class="cart-item-price">$${item.price.toFixed(2)}</p>
-                        <div class="cart-actions">
-                            <div class="cart-quantity">
-                                <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
-                                <span>${item.quantity}</span>
-                                <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
-                            </div>
-                            <button class="btn btn-pink" onclick="removeFromCart(${item.id})" style="padding: 8px 16px;">Remove</button>
-                        </div>
-                    </div>
-                `;
-                cartItemsContainer.appendChild(cartItem);
-            });
-            
-            const deliveryFee = 5.00;
-            const total = subtotal + deliveryFee;
-            
-            cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
-            cartTotal.textContent = `$${total.toFixed(2)}`;
+        // Update cart count
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = count;
+            cartCountMobile.textContent = count;
         }
 
         // Show notification
@@ -1349,6 +372,19 @@
                 animation: slideIn 0.3s ease;
             `;
             
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOut {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+            
             document.body.appendChild(notification);
             
             setTimeout(() => {
@@ -1359,501 +395,25 @@
             }, 3000);
         }
 
-        // Render featured cakes on home page
-        function renderFeaturedCakes() {
-            const cakesGrid = document.querySelector('.cakes-grid');
-            if (!cakesGrid) return;
-            
-            // Get first 4 cakes
-            const featuredCakes = websiteData.cakes.slice(0, 4);
-            
-            cakesGrid.innerHTML = featuredCakes.map(cake => `
-                <div class="cake-card">
-                    <img src="${cake.image}" alt="${cake.name}" class="cake-img">
-                    <div class="cake-info">
-                        <h3 class="cake-name">${cake.name}</h3>
-                        <p>${cake.description}</p>
-                        <p class="cake-price">$${cake.price.toFixed(2)}</p>
-                        <div class="cake-actions">
-                            <button class="btn" onclick="addToCart(${cake.id})">Add to Cart</button>
-                            <button class="btn btn-pink" onclick="viewDetails(${cake.id})">Details</button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // View cake details
-        function viewDetails(cakeId) {
-            loadPage('shop');
-            // In a real app, you would scroll to or highlight the specific cake
-        }
-
-        // Load page content
-        function loadPage(page) {
-            currentPage = page;
-            homePage.style.display = 'none';
-            pageContent.style.display = 'block';
-            
-            switch(page) {
-                case 'home':
-                    homePage.style.display = 'block';
-                    pageContent.style.display = 'none';
-                    renderFeaturedCakes();
-                    break;
-                case 'shop':
-                    renderShopPage();
-                    break;
-                case 'custom':
-                    renderCustomOrderPage();
-                    break;
-                case 'delivery':
-                    renderDeliveryPage();
-                    break;
-                case 'about':
-                    renderAboutPage();
-                    break;
-                case 'contact':
-                    renderContactPage();
-                    break;
-                case 'cart':
-                    cartModal.style.display = 'flex';
-                    renderCart();
-                    break;
-            }
-            
-            // Update active nav links
-            document.querySelectorAll('.desktop-nav a, .mobile-nav a').forEach(link => {
-                const href = link.getAttribute('href');
-                if (href && href.replace('.html', '') === page) {
-                    link.style.color = 'var(--gold)';
-                } else {
-                    link.style.color = '';
-                }
+        // Setup navigation
+        function setupNavigation() {
+            hamburger.addEventListener('click', () => {
+                mobileNav.classList.add('active');
             });
-        }
 
-        // Render shop page
-        function renderShopPage() {
-            pageContent.innerHTML = `
-                <div class="container">
-                    <h1 class="section-title">Our Delicious Cakes</h1>
-                    <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem;">
-                        Browse our collection of freshly baked cakes for every occasion. Each cake is crafted with premium ingredients and attention to detail.
-                    </p>
-                    
-                    <div class="category-filter">
-                        <button class="category-btn active" data-category="all">All Cakes</button>
-                        <button class="category-btn" data-category="birthday">Birthday Cakes</button>
-                        <button class="category-btn" data-category="wedding">Wedding Cakes</button>
-                        <button class="category-btn" data-category="kids">Kids Cakes</button>
-                        <button class="category-btn" data-category="cupcakes">Cupcakes</button>
-                        <button class="category-btn" data-category="custom">Custom Designs</button>
-                    </div>
-                    
-                    <div class="cakes-grid" id="shopCakesGrid"></div>
-                </div>
-            `;
-            
-            // Add event listeners to category buttons
-            document.querySelectorAll('.category-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    filterCakes(this.dataset.category);
+            closeMenu.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+            });
+
+            document.querySelectorAll('.mobile-nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.remove('active');
                 });
             });
-            
-            // Initial render of all cakes
-            filterCakes('all');
         }
 
-        function filterCakes(category) {
-            const filteredCakes = category === 'all' 
-                ? websiteData.cakes 
-                : websiteData.cakes.filter(cake => cake.category === category);
-            
-            const shopCakesGrid = document.getElementById('shopCakesGrid');
-            shopCakesGrid.innerHTML = filteredCakes.map(cake => `
-                <div class="cake-card">
-                    <img src="${cake.image}" alt="${cake.name}" class="cake-img">
-                    <div class="cake-info">
-                        <h3 class="cake-name">${cake.name}</h3>
-                        <p>${cake.description}</p>
-                        <p class="cake-price">$${cake.price.toFixed(2)}</p>
-                        <div class="cake-actions">
-                            <button class="btn" onclick="addToCart(${cake.id})">Add to Cart</button>
-                            <button class="btn btn-pink" onclick="showCakeDetails(${cake.id})">Customize</button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Render custom order page
-        function renderCustomOrderPage() {
-            pageContent.innerHTML = `
-                <div class="container">
-                    <h1 class="section-title">Custom Cake Order</h1>
-                    <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem;">
-                        Have a special celebration coming up? Let us create a unique cake just for you! Fill out the form below with your requirements.
-                    </p>
-                    
-                    <div class="order-form">
-                        <form id="customOrderForm">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="name">Full Name *</label>
-                                    <input type="text" id="name" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Phone Number *</label>
-                                    <input type="tel" id="phone" class="form-control" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="eventDate">Event Date *</label>
-                                <input type="date" id="eventDate" class="form-control" required>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="cakeSize">Cake Size</label>
-                                    <select id="cakeSize" class="form-control">
-                                        <option value="small">Small (6-8 servings)</option>
-                                        <option value="medium">Medium (10-12 servings)</option>
-                                        <option value="large">Large (20-25 servings)</option>
-                                        <option value="xlarge">Extra Large (30+ servings)</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="flavor">Flavor</label>
-                                    <select id="flavor" class="form-control">
-                                        <option value="vanilla">Vanilla</option>
-                                        <option value="chocolate">Chocolate</option>
-                                        <option value="red-velvet">Red Velvet</option>
-                                        <option value="carrot">Carrot Cake</option>
-                                        <option value="lemon">Lemon</option>
-                                        <option value="custom">Custom Flavor</option>
-                                    </select>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="design">Design Description *</label>
-                                <textarea id="design" class="form-control" placeholder="Please describe your cake design, including colors, theme, decorations, etc." required></textarea>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="inspiration">Upload Inspiration Image (Optional)</label>
-                                <input type="file" id="inspiration" class="form-control" accept="image/*">
-                                <small style="color: #666;">You can upload a photo of a cake design you like for reference.</small>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Delivery Option</label>
-                                <div style="display: flex; gap: 20px; margin-top: 10px;">
-                                    <label style="display: flex; align-items: center; gap: 8px;">
-                                        <input type="radio" name="delivery" value="delivery" checked> Delivery
-                                    </label>
-                                    <label style="display: flex; align-items: center; gap: 8px;">
-                                        <input type="radio" name="delivery" value="pickup"> Pickup
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <button type="submit" class="btn" style="width: 100%;">Submit Custom Order Request</button>
-                        </form>
-                    </div>
-                    
-                    <div style="max-width: 800px; margin: 40px auto 0; background-color: var(--light-pink); padding: 25px; border-radius: 10px;">
-                        <h3 style="margin-bottom: 15px;">How It Works</h3>
-                        <ol style="padding-left: 20px;">
-                            <li style="margin-bottom: 10px;">Submit your custom cake request using the form above.</li>
-                            <li style="margin-bottom: 10px;">Our cake designer will contact you within 24 hours to discuss your requirements in detail.</li>
-                            <li style="margin-bottom: 10px;">We'll provide a quote and design mockup for your approval.</li>
-                            <li style="margin-bottom: 10px;">Once approved, we'll begin creating your custom cake.</li>
-                            <li>Your cake will be delivered or ready for pickup on your event date.</li>
-                        </ol>
-                    </div>
-                </div>
-            `;
-            
-            // Set minimum date to tomorrow
-            const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            document.getElementById('eventDate').min = tomorrow.toISOString().split('T')[0];
-            
-            // Form submission
-            document.getElementById('customOrderForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                showNotification('Your custom cake request has been submitted! We will contact you within 24 hours.');
-                this.reset();
-            });
-        }
-
-        // Render delivery page
-        function renderDeliveryPage() {
-            pageContent.innerHTML = `
-                <div class="container">
-                    <h1 class="section-title">Delivery Information</h1>
-                    
-                    <div style="max-width: 900px; margin: 0 auto;">
-                        <div style="background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 40px;">
-                            <h2 style="margin-bottom: 20px; color: var(--chocolate);">Delivery Areas & Fees</h2>
-                            <p style="margin-bottom: 20px;">We deliver freshly baked cakes across the city and surrounding areas. All cakes are carefully packaged and transported in temperature-controlled vehicles to ensure they arrive in perfect condition.</p>
-                            
-                            <table class="delivery-table">
-                                <thead>
-                                    <tr>
-                                        <th>Area Zone</th>
-                                        <th>Delivery Fee</th>
-                                        <th>Estimated Delivery Time</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>CBD & Central City</td>
-                                        <td>$5.00</td>
-                                        <td>1-2 hours</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Northside Suburbs</td>
-                                        <td>$8.00</td>
-                                        <td>2-3 hours</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Southside Suburbs</td>
-                                        <td>$8.00</td>
-                                        <td>2-3 hours</td>
-                                    </tr>
-                                    <tr>
-                                        <td>East End</td>
-                                        <td>$10.00</td>
-                                        <td>3-4 hours</td>
-                                    </tr>
-                                    <tr>
-                                        <td>West Hills</td>
-                                        <td>$12.00</td>
-                                        <td>3-4 hours</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Outskirts (up to 30km)</td>
-                                        <td>$15.00</td>
-                                        <td>4-5 hours</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        
-                        <div style="background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 40px;">
-                            <h2 style="margin-bottom: 20px; color: var(--chocolate);">Order Timelines</h2>
-                            <p style="margin-bottom: 15px;">To ensure we can create the perfect cake for your celebration, please place your orders according to the following timelines:</p>
-                            
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 25px;">
-                                <div style="background-color: var(--light-pink); padding: 20px; border-radius: 10px;">
-                                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Standard Orders</h3>
-                                    <p>48 hours notice required for all custom cake orders.</p>
-                                </div>
-                                <div style="background-color: var(--light-pink); padding: 20px; border-radius: 10px;">
-                                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Same-Day Orders</h3>
-                                    <p>Available for selected ready-to-decorate cakes if ordered before 2 PM (additional $15 fee applies).</p>
-                                </div>
-                                <div style="background-color: var(--light-pink); padding: 20px; border-radius: 10px;">
-                                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Weekend Orders</h3>
-                                    <p>For Saturday/Sunday events, please order by Thursday 5 PM.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div style="background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                            <h2 style="margin-bottom: 20px; color: var(--chocolate);">Pickup Options</h2>
-                            <p style="margin-bottom: 15px;">You can also pick up your cake from our bakery:</p>
-                            <ul style="padding-left: 20px; margin-bottom: 20px;">
-                                <li style="margin-bottom: 10px;"><strong>Location:</strong> 123 Baker Street, Sweetville</li>
-                                <li style="margin-bottom: 10px;"><strong>Pickup Hours:</strong> Monday-Saturday 8 AM - 6 PM, Sunday 9 AM - 4 PM</li>
-                                <li style="margin-bottom: 10px;"><strong>Parking:</strong> Free parking available in our dedicated customer lot</li>
-                            </ul>
-                            <p>When picking up your cake, please bring your order confirmation (email or text). Our staff will help you safely transport your cake to your vehicle.</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Render about page
-        function renderAboutPage() {
-            pageContent.innerHTML = `
-                <div class="container">
-                    <div class="about-content">
-                        <h1 class="section-title">Our Story</h1>
-                        
-                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Aunt Via in her bakery" class="about-image">
-                        
-                        <div class="about-text">
-                            <p>Welcome to Aunt Via Cakes, where every cake tells a story and every celebration becomes a cherished memory. Founded in 2010 by Virginia "Aunt Via" Anderson, our bakery began as a small home kitchen where Via would bake cakes for family and friends.</p>
-                            
-                            <p>What started as a passionate hobby soon grew into a beloved local business as word spread about Via's incredible talent for creating not just delicious, but truly beautiful cakes. Her secret? A combination of time-honored family recipes, premium ingredients, and an artist's eye for design.</p>
-                        </div>
-                        
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0;">
-                            <div style="background-color: white; padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                                <h3 style="margin-bottom: 15px; color: var(--chocolate);">Our Philosophy</h3>
-                                <p>We believe that a great cake should engage all the senses. It should look like a work of art, smell like a dream, and taste even better than it looks. Every cake we create is baked with attention to detail and a whole lot of love.</p>
-                            </div>
-                            <div style="background-color: white; padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-                                <h3 style="margin-bottom: 15px; color: var(--chocolate);">Quality Commitment</h3>
-                                <p>We source only the finest ingredients: European butter, free-range eggs, premium chocolate, and seasonal fruits. We never use artificial flavors or preservatives. Our commitment to quality extends to every aspect of our business, from baking to packaging to delivery.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="about-text">
-                            <h2 style="margin: 40px 0 20px; color: var(--chocolate);">Meet Our Team</h2>
-                            <p>Today, Aunt Via Cakes is proud to employ a team of 12 passionate bakers, decorators, and customer service professionals. While Via still oversees every design and recipe, she's gathered a team that shares her dedication to craftsmanship and customer satisfaction.</p>
-                            
-                            <p>Our head pastry chef, Marco, trained in Paris and brings European techniques to our creations. Our lead decorator, Lily, is a true artist who can recreate any design from photos. And our delivery team ensures every cake arrives safely and on time, no matter where in the city you're celebrating.</p>
-                        </div>
-                        
-                        <div style="background-color: var(--light-pink); padding: 30px; border-radius: 15px; margin-top: 40px;">
-                            <h3 style="margin-bottom: 15px; color: var(--chocolate);">Hygiene & Safety Standards</h3>
-                            <p>We maintain the highest standards of cleanliness and food safety in our kitchen. All staff are trained in food handling safety, and our facility undergoes regular health inspections with consistently excellent results. During the COVID-19 pandemic, we implemented additional safety protocols including contactless delivery and enhanced sanitation procedures.</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        // Render contact page
-        function renderContactPage() {
-            pageContent.innerHTML = `
-                <div class="container">
-                    <h1 class="section-title">Get In Touch</h1>
-                    
-                    <div style="max-width: 900px; margin: 0 auto;">
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 50px;">
-                            <div style="background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                                <h2 style="margin-bottom: 20px; color: var(--chocolate);">Contact Information</h2>
-                                
-                                <div style="margin-bottom: 25px;">
-                                    <h3 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--chocolate);"><i class="fas fa-phone" style="margin-right: 10px; color: var(--blush-pink);"></i> Phone</h3>
-                                    <p>(123) 456-7890</p>
-                                    <p style="font-size: 0.9rem; color: #666;">Call us during business hours</p>
-                                </div>
-                                
-                                <div style="margin-bottom: 25px;">
-                                    <h3 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--chocolate);"><i class="fas fa-envelope" style="margin-right: 10px; color: var(--blush-pink);"></i> Email</h3>
-                                    <p>orders@auntviacakes.com</p>
-                                    <p style="font-size: 0.9rem; color: #666;">For order inquiries</p>
-                                    <p>info@auntviacakes.com</p>
-                                    <p style="font-size: 0.9rem; color: #666;">For general questions</p>
-                                </div>
-                                
-                                <div style="margin-bottom: 25px;">
-                                    <h3 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--chocolate);"><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--blush-pink);"></i> Location</h3>
-                                    <p>123 Baker Street</p>
-                                    <p>Sweetville, SV 12345</p>
-                                </div>
-                                
-                                <div>
-                                    <h3 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--chocolate);"><i class="fas fa-clock" style="margin-right: 10px; color: var(--blush-pink);"></i> Business Hours</h3>
-                                    <p>Monday - Saturday: 8:00 AM - 6:00 PM</p>
-                                    <p>Sunday: 9:00 AM - 4:00 PM</p>
-                                </div>
-                            </div>
-                            
-                            <div style="background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
-                                <h2 style="margin-bottom: 20px; color: var(--chocolate);">Send Us a Message</h2>
-                                
-                                <form id="contactForm">
-                                    <div class="form-group">
-                                        <label for="contactName">Your Name *</label>
-                                        <input type="text" id="contactName" class="form-control" required>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="contactEmail">Email Address *</label>
-                                        <input type="email" id="contactEmail" class="form-control" required>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="contactSubject">Subject</label>
-                                        <input type="text" id="contactSubject" class="form-control" placeholder="How can we help you?">
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="contactMessage">Message *</label>
-                                        <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
-                                    </div>
-                                    
-                                    <button type="submit" class="btn" style="width: 100%;">Send Message</button>
-                                </form>
-                            </div>
-                        </div>
-                        
-                        <div style="background-color: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center;">
-                            <h2 style="margin-bottom: 20px; color: var(--chocolate);">Connect With Us</h2>
-                            <p style="margin-bottom: 25px;">Follow us on social media for the latest cake creations, special offers, and baking tips!</p>
-                            
-                            <div class="social-links" style="justify-content: center;">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                <a href="#"><i class="fab fa-tiktok"></i></a>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
-                            </div>
-                            
-                            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
-                                <h3 style="margin-bottom: 15px; color: var(--chocolate);">Quick Response via WhatsApp</h3>
-                                <p style="margin-bottom: 20px;">For fastest response, message us on WhatsApp. We typically reply within minutes during business hours.</p>
-                                <a href="https://wa.me/1234567890" class="btn" target="_blank" style="background-color: #25D366;"><i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Chat on WhatsApp</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            // Contact form submission
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                showNotification('Your message has been sent! We will respond within 24 hours.');
-                this.reset();
-            });
-        }
-
-        // Initialize the website
-        function init() {
-            // Set up event listeners for navigation
-            document.querySelectorAll('.desktop-nav a').forEach(link => {
-                if (link.getAttribute('href')) {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const page = this.getAttribute('href').replace('.html', '');
-                        if (page === 'index' || page === '') {
-                            loadPage('home');
-                        } else {
-                            loadPage(page);
-                        }
-                    });
-                }
-            });
-
-            // Set up event listeners for mobile navigation
-            document.querySelectorAll('.mobile-nav a').forEach(link => {
-                if (link.getAttribute('href')) {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const page = this.getAttribute('href').replace('.html', '');
-                        if (page === 'index' || page === '') {
-                            loadPage('home');
-                        } else {
-                            loadPage(page);
-                        }
-                    });
-                }
-            });
-
-            // Cart functionality
+        // Setup cart functionality
+        function setupCart() {
             cartIcon.addEventListener('click', () => {
                 cartModal.style.display = 'flex';
                 renderCart();
@@ -1869,102 +429,86 @@
                 cartModal.style.display = 'none';
             });
 
-            // Close cart modal when clicking outside
             cartModal.addEventListener('click', (e) => {
                 if (e.target === cartModal) {
                     cartModal.style.display = 'none';
                 }
             });
-
-            // Checkout functionality
-            checkoutBtn.addEventListener('click', () => {
-                cartModal.style.display = 'none';
-                checkoutModal.style.display = 'flex';
-                
-                // Set minimum date to tomorrow
-                const tomorrow = new Date();
-                tomorrow.setDate(tomorrow.getDate() + 1);
-                document.getElementById('checkoutDate').min = tomorrow.toISOString().split('T')[0];
-                
-                // Clear any previous selections
-                document.querySelectorAll('.payment-option').forEach(option => {
-                    option.classList.remove('selected');
-                });
-            });
-
-            closeCheckout.addEventListener('click', () => {
-                checkoutModal.style.display = 'none';
-            });
-
-            // Close checkout modal when clicking outside
-            checkoutModal.addEventListener('click', (e) => {
-                if (e.target === checkoutModal) {
-                    checkoutModal.style.display = 'none';
-                }
-            });
-
-            // Payment option selection
-            document.addEventListener('click', function(e) {
-                if (e.target.closest('.payment-option')) {
-                    const paymentOption = e.target.closest('.payment-option');
-                    document.querySelectorAll('.payment-option').forEach(option => {
-                        option.classList.remove('selected');
-                    });
-                    paymentOption.classList.add('selected');
-                }
-            });
-
-            // Place order
-            placeOrderBtn.addEventListener('click', () => {
-                // Validate form
-                const name = document.getElementById('checkoutName').value;
-                const email = document.getElementById('checkoutEmail').value;
-                const phone = document.getElementById('checkoutPhone').value;
-                const address = document.getElementById('checkoutAddress').value;
-                const date = document.getElementById('checkoutDate').value;
-                const selectedPayment = document.querySelector('.payment-option.selected');
-                
-                if (!name || !email || !phone || !address || !date || !selectedPayment) {
-                    showNotification('Please fill in all required fields and select a payment method.');
-                    return;
-                }
-                
-                // Generate order ID
-                const orderNum = 'AVC-' + Date.now().toString().slice(-6);
-                orderId.textContent = orderNum;
-                
-                // Show confirmation
-                checkoutModal.style.display = 'none';
-                orderConfirmation.style.display = 'flex';
-                
-                // Clear cart
-                cart = [];
-                localStorage.setItem('cart', JSON.stringify(cart));
-                updateCartCount();
-            });
-
-            closeConfirmation.addEventListener('click', () => {
-                orderConfirmation.style.display = 'none';
-                loadPage('home');
-            });
-
-            // Close confirmation when clicking outside
-            orderConfirmation.addEventListener('click', (e) => {
-                if (e.target === orderConfirmation) {
-                    orderConfirmation.style.display = 'none';
-                    loadPage('home');
-                }
-            });
-
-            // Initialize cart count
-            updateCartCount();
-            
-            // Render featured cakes on home page
-            renderFeaturedCakes();
         }
 
-        // Initialize the website when DOM is loaded
-        document.addEventListener('DOMContentLoaded', init);
+        // Render cart items
+        function renderCart() {
+            cartItemsContainer.innerHTML = '';
+            
+            if (cart.length === 0) {
+                cartEmpty.style.display = 'block';
+                cartSummary.style.display = 'none';
+                return;
+            }
+            
+            cartEmpty.style.display = 'none';
+            cartSummary.style.display = 'block';
+            
+            let subtotal = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                const cartItem = document.createElement('div');
+                cartItem.style.cssText = 'display: flex; align-items: center; background-color: white; padding: 20px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);';
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 10px; margin-right: 20px;">
+                    <div style="flex: 1;">
+                        <h4 style="margin: 0 0 10px;">${item.name}</h4>
+                        <div style="font-weight: 700; color: var(--gold); font-size: 1.2rem; margin-bottom: 10px;">$${item.price.toFixed(2)}</div>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <button onclick="updateCartItem(${item.id}, -1)" style="width: 30px; height: 30px; border-radius: 50%; background-color: var(--light-gray); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">-</button>
+                                <span>${item.quantity}</span>
+                                <button onclick="updateCartItem(${item.id}, 1)" style="width: 30px; height: 30px; border-radius: 50%; background-color: var(--light-gray); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">+</button>
+                            </div>
+                            <button onclick="removeFromCart(${item.id})" style="background-color: var(--blush-pink); color: var(--chocolate); padding: 8px 16px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer;">Remove</button>
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+            
+            const deliveryFee = 5.00;
+            const total = subtotal + deliveryFee;
+            
+            cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+        }
+
+        // Update cart item quantity
+        function updateCartItem(cakeId, change) {
+            const item = cart.find(item => item.id === cakeId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity < 1) {
+                    removeFromCart(cakeId);
+                } else {
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCartCount();
+                    renderCart();
+                }
+            }
+        }
+
+        // Remove item from cart
+        function removeFromCart(cakeId) {
+            cart = cart.filter(item => item.id !== cakeId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            renderCart();
+        }
+
+        // Global functions for cart buttons
+        window.addToCart = addToCart;
+        window.updateCartItem = updateCartItem;
+        window.removeFromCart = removeFromCart;
     </script>
 </body>
-  </html>
+                                </html>
