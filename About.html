@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Aunt Via Cakes | Our Story of Passion & Craftsmanship</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FFF9F0;
+            --blush-pink: #F8E2E9;
+            --chocolate: #4A2C2A;
+            --light-pink: #FDF2F8;
+            --dark-chocolate: #2D1B1A;
+            --gold: #D4AF37;
+            --gray: #5D5D5D;
+            --light-gray: #F5F5F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--chocolate);
+            background-color: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-chocolate);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            background-color: var(--chocolate);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(74, 44, 42, 0.2);
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-chocolate);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(74, 44, 42, 0.3);
+        }
+
+        .btn-pink {
+            background-color: var(--blush-pink);
+            color: var(--chocolate);
+        }
+
+        .btn-pink:hover {
+            background-color: #f0d4dd;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--chocolate);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            color: var(--gold);
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+        .desktop-nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .desktop-nav a {
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .desktop-nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--chocolate);
+            transition: width 0.3s ease;
+        }
+
+        .desktop-nav a:hover:after {
+            width: 100%;
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--blush-pink);
+            color: var(--chocolate);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--chocolate);
+        }
+
+        /* Mobile Navigation Overlay */
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 249, 240, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 999;
+            transition: right 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mobile-nav-overlay.active {
+            right: 0;
+        }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+
+        .mobile-nav a {
+            font-size: 24px;
+            font-weight: 600;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .mobile-nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--chocolate);
+            transition: width 0.3s ease;
+        }
+
+        .mobile-nav a:hover:after {
+            width: 80px;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 30px;
+            cursor: pointer;
+            color: var(--chocolate);
+        }
+
+        /* Page Content */
+        .page-content {
+            padding-top: 120px;
+            min-height: 70vh;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--blush-pink);
+        }
+
+        /* Hero Section */
+        .about-hero {
+            position: relative;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(45, 27, 26, 0.8), rgba(45, 27, 26, 0.4));
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .about-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .about-hero-content p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        /* Story Section */
+        .story-section {
+            margin-bottom: 100px;
+        }
+
+        .story-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .story-content {
+            font-size: 1.1rem;
+        }
+
+        .story-paragraph {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .story-quote {
+            background-color: var(--light-pink);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .story-quote:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 100px;
+            font-family: 'Playfair Display', serif;
+            color: var(--blush-pink);
+            opacity: 0.3;
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark-chocolate);
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-author {
+            font-weight: 600;
+            color: var(--chocolate);
+        }
+
+        /* Values Section */
+        .values-section {
+            background-color: var(--light-pink);
+            padding: 80px 0;
+            margin-bottom: 80px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--blush-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--chocolate);
+            font-size: 32px;
+        }
+
+        .value-title {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin-bottom: 100px;
+        }
+
+        .team-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .team-member-info {
+            padding: 25px;
+        }
+
+        .team-member-name {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .team-member-role {
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .team-member-bio {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Quality Commitment */
+        .quality-section {
+            background-color: white;
+            padding: 80px 0;
+            border-radius: 20px;
+            margin-bottom: 80px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .quality-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .quality-icon {
+            font-size: 40px;
+            color: var(--blush-pink);
+            margin-bottom: 20px;
+        }
+
+        .quality-title {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Timeline */
+        .timeline-section {
+            margin-bottom: 100px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 50px auto 0;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--blush-pink);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+            width: 50%;
+            padding-right: 40px;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-right: 0;
+            padding-left: 40px;
+        }
+
+        .timeline-content {
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background-color: var(--blush-pink);
+            color: var(--chocolate);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 25px;
+            right: -13px;
+            width: 26px;
+            height: 26px;
+            background-color: var(--chocolate);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--blush-pink);
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: auto;
+            left: -13px;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--light-pink) 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 80px;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--gray);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-chocolate);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--blush-pink);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--blush-pink);
+            color: var(--chocolate);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .page-content {
+                padding-top: 100px;
+            }
+            
+            .about-hero {
+                height: 400px;
+            }
+            
+            .about-hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-right: 0;
+                padding-left: 70px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 70px;
+            }
+            
+            .timeline-dot {
+                left: 17px;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 17px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .about-hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .story-quote {
+                padding: 30px 20px;
+            }
+            
+            .quote-text {
+                font-size: 1.2rem;
+            }
+            
+            .cta-title {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-birthday-cake"></i>
+                Aunt Via Cakes
+            </div>
+            
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="our-cakes.html">Our Cakes</a>
+                <a href="custom-order.html">Custom Order</a>
+                <a href="delivery.html">Delivery</a>
+                <a href="about.html" class="active">About Us</a>
+                <a href="contact.html">Contact</a>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </nav>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNav">
+        <div class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="our-cakes.html">Our Cakes</a>
+            <a href="custom-order.html">Custom Order</a>
+            <a href="delivery.html">Delivery</a>
+            <a href="about.html" class="active">About Us</a>
+            <a href="contact.html">Contact</a>
+            <div class="cart-icon" id="cartIconMobile">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCountMobile">0</span>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="about-hero">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Aunt Via's Bakery Kitchen" class="about-hero-image">
+                <div class="about-hero-overlay"></div>
+                <div class="about-hero-content">
+                    <h1>Our Story of Passion & Craftsmanship</h1>
+                    <p>Baking happiness into every cake since 2010 with love, quality ingredients, and attention to detail.</p>
+                </div>
+            </section>
+
+            <!-- Our Story Section -->
+            <section class="story-section">
+                <h2 class="section-title">The Aunt Via Story</h2>
+                <div class="story-container">
+                    <img src="https://images.unsplash.com/photo-1568254183919-78a4f43a2877?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Aunt Via in her home kitchen" class="story-image">
+                    
+                    <div class="story-content">
+                        <p class="story-paragraph">
+                            Aunt Via Cakes began in 2010 not in a commercial bakery, but in the warm, flour-dusted kitchen of Virginia "Aunt Via" Anderson's cozy home. What started as a passionate hobby—baking birthday cakes for family and friends—quickly grew into something much more special. Word spread through the neighborhood, then the city, about the magical cakes that tasted like childhood memories and looked like works of art.
+                        </p>
+                        
+                        <p class="story-paragraph">
+                            Via's secret wasn't just in her family recipes (passed down through three generations), but in her philosophy: every cake should tell a story. She believed that celebrations aren't just dates on a calendar—they're milestones, memories in the making, moments of joy that deserve to be honored with something extraordinary.
+                        </p>
+                        
+                        <div class="story-quote">
+                            <p class="quote-text">"A cake isn't just dessert. It's the centerpiece of celebration, the sweet punctuation at the end of a beautiful sentence, the edible memory that lingers long after the last crumb is gone."</p>
+                            <p class="quote-author">- Virginia "Aunt Via" Anderson, Founder</p>
+                        </div>
+                        
+                        <p class="story-paragraph">
+                            By 2015, what began as a home kitchen operation had grown into a dedicated bakery with a team of passionate bakers. But despite the growth, Aunt Via's original vision remains at our core: to create cakes that engage all the senses, that look like art, smell like heaven, and taste even better than they look.
+                        </p>
+                        
+                        <p class="story-paragraph">
+                            Today, we serve thousands of customers across the city, creating cakes for birthdays, weddings, anniversaries, and every celebration in between. But whether it's a simple birthday cake or an elaborate five-tier wedding masterpiece, each creation receives the same attention to detail, the same commitment to quality, and the same generous sprinkle of love that Via baked into her very first cake.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Values Section -->
+            <section class="values-section">
+                <div class="container">
+                    <h2 class="section-title">Our Core Values</h2>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3 class="value-title">Baked with Love</h3>
+                            <p>Every cake is crafted with genuine care and passion. We believe love is the most important ingredient in every recipe.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h3 class="value-title">Premium Ingredients</h3>
+                            <p>We source only the finest ingredients: European butter, free-range eggs, premium chocolate, and seasonal fruits.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3 class="value-title">Artistic Excellence</h3>
+                            <p>Each cake is a masterpiece, designed with artistic flair and attention to every decorative detail.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h3 class="value-title">Uncompromising Quality</h3>
+                            <p>We never cut corners. From recipe testing to final decoration, excellence is our only standard.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Team Section -->
+            <section class="team-section">
+                <h2 class="section-title">Meet Our Family</h2>
+                <p class="team-intro">Behind every Aunt Via cake is a team of passionate bakers, decorators, and artists who share our founder's commitment to quality and craftsmanship.</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Virginia Anderson" class="team-member-image">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Virginia Anderson</h3>
+                            <span class="team-member-role">Founder & Head Baker</span>
+                            <p class="team-member-bio">"Aunt Via" herself. With over 40 years of baking experience, she oversees every recipe and ensures each cake meets her exacting standards.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marco Rossi" class="team-member-image">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Marco Rossi</h3>
+                            <span class="team-member-role">Head Pastry Chef</span>
+                            <p class="team-member-bio">Trained in Paris and Milan, Marco brings European techniques and flavor combinations to our classic recipes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lily Chen" class="team-member-image">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Lily Chen</h3>
+                            <span class="team-member-role">Lead Cake Decorator</span>
+                            <p class="team-member-bio">A true artist with a background in fine arts, Lily can recreate any design from photos and brings imaginative flair to every creation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="James Wilson" class="team-member-image">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">James Wilson</h3>
+                            <span class="team-member-role">Operations Manager</span>
+                            <p class="team-member-bio">Ensures every cake is delivered perfectly and on time. James coordinates our team and manages customer relations with warmth and efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quality Commitment Section -->
+            <section class="quality-section">
+                <div class="container">
+                    <h2 class="section-title">Our Quality Commitment</h2>
+                    <div class="quality-grid">
+                        <div class="quality-item">
+                            <div class="quality-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3 class="quality-title">Hygiene Excellence</h3>
+                            <p>Our kitchen maintains the highest standards of cleanliness with regular health inspections and staff training.</p>
+                        </div>
+                        
+                        <div class="quality-item">
+                            <div class="quality-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h3 class="quality-title">Local Sourcing</h3>
+                            <p>We partner with local farms for fresh eggs, dairy, and seasonal fruits whenever possible.</p>
+                        </div>
+                        
+                        <div class="quality-item">
+                            <div class="quality-icon">
+                                <i class="fas fa-ban"></i>
+                            </div>
+                            <h3 class="quality-title">No Artificials</h3>
+                            <p>We never use artificial flavors, colors, or preservatives. Our colors come from natural sources.</p>
+                        </div>
+                        
+                        <div class="quality-item">
+                            <div class="quality-icon">
+                                <i class="fas fa-hand-sparkles"></i>
+                            </div>
+                            <h3 class="quality-title">Handcrafted Detail</h3>
+                            <p>Every decoration is hand-applied with precision. No shortcuts, no mass production.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timeline Section -->
+            <section class="timeline-section">
+                <h2 class="section-title">Our Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2010</div>
+                            <h3>The Beginning</h3>
+                            <p>Aunt Via starts baking cakes for family and friends in her home kitchen. Her first paid order is a birthday cake for a neighbor's child.</p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2012</div>
+                            <h>First Wedding Cake</h3>
+                            <p>Via creates her first wedding cake for a family wedding. Word begins to spread about her exceptional talent.</p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2015</div>
+                            <h3>First Bakery</h3>
+                            <p>With growing demand, Via opens her first small bakery on Baker Street with two employees.</p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2018</div>
+                            <h3>Expansion</h3>
+                            <p>The bakery expands to include a dedicated wedding cake studio and hires its first pastry chef trained in Europe.</p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2020</div>
+                            <h3>Pandemic Adaptation</h3>
+                            <p>Despite challenges, we adapt with contactless delivery and safety protocols, becoming a trusted source of celebration during difficult times.</p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2023</div>
+                            <h3>Today</h3>
+                            <p>We now serve thousands of customers annually with a team of 12 dedicated professionals, while maintaining the personal touch that started it all.</p>
+                        </div>
+                        <div class="timeline-dot"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-section">
+                <h2 class="cta-title">Taste the Aunt Via Difference</h2>
+                <p class="cta-description">Experience the quality, craftsmanship, and passion that goes into every Aunt Via cake. Whether it's a simple birthday treat or an elaborate wedding masterpiece, we're here to make your celebration unforgettable.</p>
+                <a href="our-cakes.html" class="btn" style="margin-right: 15px;">Browse Our Cakes</a>
+                <a href="custom-order.html" class="btn btn-pink">Order Custom Cake</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Aunt Via Cakes</div>
+                    <p>Creating memorable moments with every slice since 2010. Our passion is baking happiness into every cake we create.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 10px;"><a href="index.html">Home</a></li>
+                        <li style="margin-bottom: 10px;"><a href="our-cakes.html">Our Cakes</a></li>
+                        <li style="margin-bottom: 10px;"><a href="custom-order.html">Custom Order</a></li>
+                        <li style="margin-bottom: 10px;"><a href="delivery.html">Delivery Info</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> orders@auntviacakes.com</p>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 123 Baker Street, Sweetville</p>
+                    <p><i class="fas fa-clock" style="margin-right: 10px;"></i> Mon-Sat: 8am-6pm, Sun: 9am-4pm</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Aunt Via Cakes. All rights reserved. | Premium cakes for every celebration.
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            setupNavigation();
+            updateCartCount();
+            setupTimelineAnimation();
+        });
+
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Update cart count
+        function updateCartCount() {
+            const count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+            document.getElementById('cartCountMobile').textContent = count;
+        }
+
+        // Setup navigation
+        function setupNavigation() {
+            const hamburger = document.getElementById('hamburger');
+            const mobileNav = document.getElementById('mobileNav');
+            const closeMenu = document.getElementById('closeMenu');
+            
+            hamburger.addEventListener('click', () => {
+                mobileNav.classList.add('active');
+            });
+
+            closeMenu.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+            });
+
+            // Close mobile nav when clicking on a link
+            document.querySelectorAll('.mobile-nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.remove('active');
+                });
+            });
+        }
+
+        // Setup timeline animation
+        function setupTimelineAnimation() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            // Create intersection observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            // Apply initial styles and observe each item
+            timelineItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                item.style.transitionDelay = `${index * 0.1}s`;
+                
+                observer.observe(item);
+            });
+        }
+
+        // Show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background-color: var(--chocolate);
+                color: white;
+                padding: 15px 25px;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 10000;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            // Add CSS animation
+            if (!document.querySelector('#notificationStyles')) {
+                const style = document.createElement('style');
+                style.id = 'notificationStyles';
+                style.textContent = `
+                    @keyframes slideIn {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    @keyframes slideOut {
+                        from { transform: translateX(0); opacity: 1; }
+                        to { transform: translateX(100%); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
