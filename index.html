@@ -1,176 +1,23 @@
-import { Link } from "react-router-dom";
-import { Sparkles, Truck, Palette, Award, ChevronLeft, ChevronRight, Star } from "lucide-react";
-import ScrollReveal from "@/components/ScrollReveal";
-import ProductCard from "@/components/ProductCard";
-import { products } from "@/lib/products";
-import heroCake from "@/assets/hero-cake.jpg";
-import { useState, useEffect } from "react";
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aunt Via Cakes | Premium Custom Cakes</title>
+    <meta name="description" content="Premium custom cakes crafted with love for every celebration. Order birthday, wedding, and custom cakes online." />
+    <meta name="author" content="Aunt Via Cakes" />
+    <meta property="og:title" content="Aunt Via Cakes | Premium Custom Cakes" />
+    <meta property="og:description" content="Premium custom cakes crafted with love for every celebration." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-const testimonials = [
-  { name: "Maria Chen", text: "The Chocolate Dream cake was absolutely divine. Best cake I've ever tasted â€” my guests couldn't stop raving about it!", rating: 5 },
-  { name: "James Okafor", text: "Aunt Via made our wedding cake and it was the centrepiece of the entire reception. Stunning and delicious.", rating: 5 },
-  { name: "Sophia Reyes", text: "I order from Aunt Via every birthday. The quality and artistry are consistently world-class. Highly recommend!", rating: 5 },
-];
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  </head>
 
-const features = [
-  { icon: Sparkles, title: "Fresh Ingredients", desc: "Only the finest organic, locally sourced ingredients make it into our kitchen." },
-  { icon: Palette, title: "Custom Designs", desc: "Every cake is a canvas â€” tell us your vision and we'll bring it to life." },
-  { icon: Truck, title: "Fast Delivery", desc: "Same-day delivery available so your celebration never has to wait." },
-  { icon: Award, title: "Premium Quality", desc: "Award-winning recipes perfected over two decades of baking excellence." },
-];
-
-const Index = () => {
-  const featured = products.slice(0, 4);
-  const [testimonialIdx, setTestimonialIdx] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => setTestimonialIdx(i => (i + 1) % testimonials.length), 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <main>
-      {/* Hero */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroCake} alt="Premium cake" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/70 via-foreground/40 to-transparent" />
-        </div>
-        <div className="relative container mx-auto px-4 py-32">
-          <div className="max-w-xl">
-            <ScrollReveal>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-gold/20 text-gold text-sm font-medium mb-6">
-                âœ¨ Freshly baked daily
-              </span>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6" style={{ color: 'hsl(36, 33%, 97%)' }}>
-                Delicious Moments, Beautifully Baked
-              </h1>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <p className="text-lg mb-8 max-w-md" style={{ color: 'hsla(36, 33%, 97%, 0.8)' }}>
-                Custom cakes crafted with love for every occasion â€” from intimate gatherings to grand celebrations.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={300}>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/shop" className="btn-glow px-8 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm tracking-wide">
-                  Order Now
-                </Link>
-                <Link to="/shop" className="btn-gold px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide">
-                  Explore Cakes
-                </Link>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Products */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="text-gold text-sm font-semibold tracking-widest uppercase">Our Collection</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold mt-3">Featured Cakes</h2>
-              <p className="text-muted-foreground mt-3 max-w-lg mx-auto">Each cake is a masterpiece â€” handcrafted with precision and passion.</p>
-            </div>
-          </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featured.map((p, i) => (
-              <ScrollReveal key={p.id} delay={i * 80}>
-                <ProductCard product={p} />
-              </ScrollReveal>
-            ))}
-          </div>
-          <ScrollReveal>
-            <div className="text-center mt-12">
-              <Link to="/shop" className="btn-gold px-8 py-3 rounded-full font-semibold text-sm inline-block">
-                View All Cakes
-              </Link>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-24 bg-cream-dark">
-        <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="text-gold text-sm font-semibold tracking-widest uppercase">Why Aunt Via</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold mt-3">Why Choose Us</h2>
-            </div>
-          </ScrollReveal>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((f, i) => (
-              <ScrollReveal key={f.title} delay={i * 80}>
-                <div className="card-hover bg-card rounded-2xl p-8 text-center border border-border">
-                  <div className="w-14 h-14 rounded-2xl bg-blush flex items-center justify-center mx-auto mb-5">
-                    <f.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-display text-lg font-semibold mb-2">{f.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <ScrollReveal>
-            <div className="text-center mb-12">
-              <span className="text-gold text-sm font-semibold tracking-widest uppercase">Testimonials</span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold mt-3">What Our Customers Say</h2>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal>
-            <div className="max-w-2xl mx-auto relative">
-              <div className="bg-card rounded-2xl p-8 md:p-12 border border-border text-center min-h-[200px] flex flex-col justify-center">
-                <div className="flex justify-center gap-1 mb-4">
-                  {Array.from({ length: testimonials[testimonialIdx].rating }).map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-gold text-gold" />
-                  ))}
-                </div>
-                <p className="text-lg italic text-foreground/80 mb-6 font-display">"{testimonials[testimonialIdx].text}"</p>
-                <p className="font-semibold text-foreground">{testimonials[testimonialIdx].name}</p>
-              </div>
-              <div className="flex justify-center gap-4 mt-6">
-                <button onClick={() => setTestimonialIdx(i => (i - 1 + testimonials.length) % testimonials.length)} className="p-2 rounded-full bg-muted hover:bg-primary/10 transition-colors" aria-label="Previous">
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <div className="flex gap-2 items-center">
-                  {testimonials.map((_, i) => (
-                    <button key={i} onClick={() => setTestimonialIdx(i)} className={`w-2.5 h-2.5 rounded-full transition-all ${i === testimonialIdx ? "bg-primary w-6" : "bg-muted-foreground/30"}`} />
-                  ))}
-                </div>
-                <button onClick={() => setTestimonialIdx(i => (i + 1) % testimonials.length)} className="p-2 rounded-full bg-muted hover:bg-primary/10 transition-colors" aria-label="Next">
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 bg-blush">
-        <div className="container mx-auto px-4 text-center">
-          <ScrollReveal>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">Order Your Dream Cake Today</h2>
-            <p className="text-muted-foreground mb-8 max-w-md mx-auto">Limited availability â€” we bake fresh to order. Don't miss your celebration's centrepiece.</p>
-            <Link to="/shop" className="btn-glow inline-block px-10 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-sm tracking-wide">
-              Start Your Order
-            </Link>
-          </ScrollReveal>
-        </div>
-      </section>
-    </main>
-  );
-};
-
-export default Index;
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
